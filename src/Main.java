@@ -34,22 +34,40 @@ public class Main extends JPanel implements KeyListener {//KeyListener接收鍵�
     @Override
     public void keyPressed(KeyEvent e) {//keyPressed按下某個鍵時呼叫此方法。
         int k=e.getKeyCode();
-        System.out.println(k);
-        if(k==KeyEvent.VK_UP){
-            s.walk(0,-5);
-        }
-        if(k==KeyEvent.VK_DOWN){
-            s.walk(0,5);
-
-        }
-        if(k==KeyEvent.VK_LEFT){
-            s.walk(-5,0);
-
-        }
-        if(k==KeyEvent.VK_RIGHT){
-            s.walk(5,0);
+        switch(k){
+            case KeyEvent.VK_UP:
+                s.walk(0,-5);
+                break;
+            case KeyEvent.VK_DOWN:
+                s.walk(0,5);
+                break;
+            case KeyEvent.VK_LEFT:
+                s.walk(-5,0);
+                break;
+            case KeyEvent.VK_RIGHT:
+                s.walk(5,0);
+                break;
+            default:
+                //按別的鍵時,跳出視窗
+                JOptionPane.showMessageDialog(this,"please input an arrow key");
         }
         repaint();
+//        System.out.println(k);
+//        if(k==KeyEvent.VK_UP){
+//            s.walk(0,-5);
+//        }
+//        else if(k==KeyEvent.VK_DOWN){
+//            s.walk(0,5);
+//
+//        }
+//        else if (k==KeyEvent.VK_LEFT){
+//            s.walk(-5,0);
+//
+//        }
+//        else if (k==KeyEvent.VK_RIGHT){
+//            s.walk(5,0);
+//        }
+//        repaint();
     }
 
     @Override
